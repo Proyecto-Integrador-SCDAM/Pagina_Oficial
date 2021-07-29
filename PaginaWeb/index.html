@@ -19,14 +19,14 @@
     <!-- VALERIA -->
         <div class="center transparencia">
             <h1>Iniciar sesion</h1>
-            <form method="post">
+            <form>
                 <div class="txt_field">
                     <label>Correo electronico</label>
-                    <input v-model="correo" type="email" class="form-control" id="floatingInput" placeholder="nombre@ejemplo.com" required>
+                    <input v-model="enviardatos['correo']" type="email" class="form-control" id="floatingInput" placeholder="nombre@ejemplo.com" required>
                 </div> 
                 <div class="txt_field">
                     <label>Contraseña</label>
-                    <input v-model="contra" type="password" class="form-control" id="floatingPassword" placeholder="contraseña" required>
+                    <input v-model="enviardatos['contra']" type="password" class="form-control" id="floatingPassword" placeholder="contraseña" required>
                 </div> 
                 <br> 
                 <div class="d-grid gap-2">
@@ -40,6 +40,8 @@
 
 
             </form>
+            <!-- comprobante  -->
+            <p> {{comprobante}}</p>
         </div>
     </div> 
     <!-- BRENDA (Diseño Inputs) -->
@@ -86,24 +88,24 @@
         el: "#app", //Elemento
         data: { 
             corr_rec: "recuperarcontra@uttcampues.edu.mx",
-            correo:"",
-            contra:"",
-        },
-        methods: {
+            enviardatos:[
+                {correo:"",contra:""}
+            ],
+            comprobante:""
             
         },
-        computed: {
+        methods: {
             referencia: function () {
-                if(this.correo=="admin@gmail.com"){
-                    return "admins/ad_avisos.html";
-                } else if (this.correo=="maestro@gmail.com"){
-                    return "profe/ma_avisos.html";
-                } else if (this.correo=="alumno@gmail.com"){
-                    return "alumno/al_avisos.html";
-                } else {
-                    return"";
-                }
+                axios.post('https://localhost/Pagina_Equipo/PaginaWeb/src/accountlogin.php', {
+                //NFCcode: this.NFCcode //EJEMPLO MANDAR VARIABLE
+                }).then((response) => {
+                this.comprobante=response.data;
+
+            })
             }
+        },
+        computed: {
+           
         }
     });
 </script>

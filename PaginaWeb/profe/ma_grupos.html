@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entradas y Salidas</title>
+    <link rel="stylesheet" media="all" href="../stylebase.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+.letrasenelcentro
+{
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+.imagen
+{
+    display: flex;
+    height: 30vh;
+    width: 30vh;
+    justify-content: center;
+    margin-left: 93vh;
+}
+    </style>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <!-- VUE -->
+    <div id="app">
+        <div class="grid-container" id="fixed">
+            <!-- Barra superior -->
+            <div class="grid-itemHeader" id="azul1">  
+                <div class="Banner-grid-container">
+
+                    <div class="Banner-grid-item-izq" id="azul2" v-on:click="Volver">
+                        <div class="Centrar">
+                            <img v-if="c_volver == 1" src="../imagenes/volver-flecha.png" height="50%" width="30%">
+                        </div>
+                    </div>
+
+                    <div class="Banner-grid-item-cen" id="blanco1">
+                        <div class="Centrar">
+                            <h1> {{ Titulo_Principal }} </h1>
+                        </div>
+                    </div>
+
+                    <div class="Banner-grid-item-der cerrarses" id="azul2" v-on:click="CerrarSesion">
+                        <div class="Centrar"> 
+                            <img src="../imagenes/apagar.png" height="50%" width="30%">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CONTENIDO (Página) -->
+            <div class="grid-itemContenido">
+                <h4 class="letrasenelcentro">Grupo 3A TM TICS</h4>
+                <br>
+                <table class="table table-primary table-hover table-bordered border-info table striped">
+                   <thead>
+                     <tr>
+                       <th scope="col">#</th>
+                       <th scope="col">Nombre</th>
+                       <th scope="col">Apellido Paterno</th>
+                       <th scope="col">Apellido Materno</th>
+                       <th scope="col">Acceso</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                       <th scope="row">1</th>
+                       <td>Carlos Armando</td>
+                       <td>Lopez</td>
+                       <td>Laguna</td>
+                       <td>
+                           <div class="form-check form-switch">    
+                           <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled"></label>
+                         </div>
+                         </td>
+                     </tr>
+                     <tr>
+                       <th scope="row">2</th>
+                       <td>Valeria Alejandra</td>
+                       <td>Diaz</td>
+                       <td>Guerrero</td>
+                       <td>
+                           <div class="form-check form-switch">    
+                               <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                               <label class="form-check-label" for="flexSwitchCheckCheckedDisabled"></label>
+                             </div>
+                       </td>
+                     </tr>
+                     <tr>
+                       <th scope="row">3</th>
+                       <td>Francisco Jared</td>
+                       <td>Marentez</td>
+                       <td>Delgado</td><td>
+                           <div class="form-check form-switch">    
+                               <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                               <label class="form-check-label" for="flexSwitchCheckCheckedDisabled"></label>
+                             </div>
+                       </td>
+                     </tr>
+                     <tr>
+                       <th scope="row">4</th>
+                       <td>Jorge Alejandro</td>
+                       <td>Montoya</td>
+                       <td>Salas</td>
+                       <td>
+                           <div class="form-check form-switch">    
+                               <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" disabled>
+                               <label class="form-check-label" for="flexSwitchCheckCheckedDisabled"></label>
+                             </div>
+                       </td>
+                     </tr>
+                     <th scope="row">5</th>
+                     <td>Brenda Azucena</td>
+                     <td>Medina</td>
+                     <td>Alvarez</td>
+                     <td>
+                       <div class="form-check form-switch">    
+                           <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled"></label>
+                         </div>
+                   </td>
+                   </tbody>
+                 </table>
+                 <br>
+                 <h4 class="letrasenelcentro">Grupo 3C TM Mtto Industrial</h4>
+                <br>
+                <table class="table table-primary table-hover table-bordered border-info table striped">
+                   <thead>
+                     <tr>
+                       <th scope="col">#</th>
+                       <th scope="col">Nombre</th>
+                       <th scope="col">Apellido Paterno</th>
+                       <th scope="col">Apellido Materno</th>
+                       <th scope="col">Acceso</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                       <th scope="row">1</th>
+                       <td>Jaime Alonso</td>
+                       <td>De La Cruz</td>
+                       <td>Hernandez</td>
+                       <td>
+                           <div class="form-check form-switch">    
+                           <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled"></label>
+                         </div>
+                         </td>
+                     </tr>
+                     <tr>
+                       <th scope="row">2</th>
+                       <td>Johan Adan</td>
+                       <td>De Avila</td>
+                       <td>Orozco</td>
+                       <td>
+                           <div class="form-check form-switch">    
+                               <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                               <label class="form-check-label" for="flexSwitchCheckCheckedDisabled"></label>
+                             </div>
+                       </td>
+                     </tr>
+                     <tr>
+                       <th scope="row">3</th>
+                       <td>Juan Jose</td>
+                       <td>De la Cruz</td>
+                       <td>Castorena</td><td>
+                           <div class="form-check form-switch">    
+                               <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                               <label class="form-check-label" for="flexSwitchCheckCheckedDisabled"></label>
+                             </div>
+                       </td>
+                     </tr>
+                     <tr>
+                       <th scope="row">4</th>
+                       <td>Francisco Daniel</td>
+                       <td>Reza</td>
+                       <td>Fraire</td>
+                       <td>
+                           <div class="form-check form-switch">    
+                               <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                               <label class="form-check-label" for="flexSwitchCheckCheckedDisabled"></label>
+                             </div>
+                       </td>
+                     </tr>
+                     <th scope="row">5</th>
+                     <td>Jaime Alfredo</td>
+                     <td>Sifuentes</td>
+                     <td>Nuñez</td>
+                     <td>
+                       <div class="form-check form-switch">    
+                           <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled"></label>
+                         </div>
+                   </td>
+                   </tbody>
+                 </table>
+            </div>
+
+            <!-- FOOTER -->
+            <div v-if="(tipo_usuario == 'admin' || tipo_usuario == 'maestro') && c_footer" class="Footer-grid-container">
+
+                <div class="Footer-grid-item-izq footer-hvr" id="azul2">
+                    <div class="Centrar">
+                        <h2> Opción 1 </h2>
+                    </div>
+                </div>
+
+                <div class="Footer-grid-item-cen footer-hvr" id="azul2">
+                    <div class="Centrar">
+                        <h2> Opción 2 </h2>
+                    </div>
+                </div>
+
+                <div class="Footer-grid-item-der footer-hvr" id="azul2">
+                    <div class="Centrar"> 
+                        <h2> Opción 3 </h2>
+                    </div>
+                </div>
+
+            </div>
+        </div>        
+    </div>
+
+    <!-- CÓDIGO JS/VUE-->
+    <script>
+        //MENSAJE
+        var vm = new Vue ({
+            el: "#app", //Elemento
+            data: { 
+                c_volver: 1,
+                c_footer: 0,
+                tipo_usuario:"admin",
+                Titulo_Principal: "Entradas y Salidas"
+            },
+            methods: {
+                CerrarSesion: function (event) {
+                    window.location.href = "../index.html"
+                },
+                Volver: function (event) {
+                    window.location.href = "ma_avisos.html"
+                },
+            },
+            computed: {
+
+            }
+        });
+    </script>
+</body>
+</html>

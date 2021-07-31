@@ -1,25 +1,24 @@
 <?php
-require_once 'databaseconnect.php';
+//require_once 'databaseconnect.php';
 
-$Recibido = json_decode(file_get_contents('php://input'), true);
+#VARIABLES
+//RECIBIR VARIABLES
+$recibirjson = json_decode(file_get_contents('php://input'), true);
+$correocon = $recibirjson['correocon'];
+$contracon = $recibirjson['contracon'];
 
-$correo = $Recibido['correo'];
-$contra = $Recibido['contra'];
+//VARIABLES LOCALES
+$usuario = "profe";
 
-echo "Tu correo es" .$correo . "Tu contraseña es" .$contra;
+//CONSULTAS
+$Nom_temp = $recibirjson['correocon'];
+$Permiso_temp = $recibirjson['contracon'];
 
-/*$RespuestaCon = [
 
-    "Con_Nombre" => $Nom_temp,
-
-    "Con_Permiso" => $Permiso_temp,
-
-    "Con_Causa" => $Causa_temp
-
+//DEVOLVER VARIABLES
+$RespuestaCon = [
+    "Con_usuario" => $usuario,
 ];
+echo json_encode($RespuestaCon);
 
-
-
-
-echo json_encode($RespuestaCon);*/
 

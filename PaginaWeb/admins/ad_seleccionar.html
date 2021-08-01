@@ -88,12 +88,12 @@
                 <tbody>
                     <!-- FILA 1 -->
                     <tr v-for="row in allData">
-                      <td> {{ row.MATRICULA }} </th>
-                      <td> {{ row.NOMBRE }} </td>
-                      <td> {{ row.GRUPO }} </td>
-                      <td> {{ row.ESPECIALIDAD }} </td>
-                      <td> {{ row.CORREO }} </td>
-                      <td> {{ row.PERMISO }} </td>
+                        <td v-on:click="EditarPersona(row.MATRICULA)"> {{ row.MATRICULA }} </th>
+                        <td v-on:click="EditarPersona(row.MATRICULA)"> {{ row.NOMBRE }} </td>
+                        <td v-on:click="EditarPersona(row.MATRICULA)"> {{ row.GRUPO }} </td>
+                        <td v-on:click="EditarPersona(row.MATRICULA)"> {{ row.ESPECIALIDAD }} </td>
+                        <td v-on:click="EditarPersona(row.MATRICULA)"> {{ row.CORREO }} </td>
+                        <td v-on:click="EditarPersona(row.MATRICULA)"> {{ row.PERMISO }} </td>
                     </tr>
                 </tbody>
             </table>
@@ -202,6 +202,10 @@
                    }) .then((response) => {
                     this.allData = response.data;
                    })
+                },
+                EditarPersona:function(event)
+                {
+                  alert("Persona: " + event); 
                 },
                 Ordenar: function (event) {
                 this.orden=event;

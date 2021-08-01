@@ -7,14 +7,10 @@
     <title>LAYOUT</title>
     <link rel="stylesheet" media="all" href="../stylebase.css"/>
     <link rel="stylesheet" media="all" href="../style.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    
     <!-- VUE -->
     <div id="app">
         <div class="grid-container" id="fixed">
@@ -59,7 +55,7 @@
               </div>
 
               <!-- INPUT -->
-              <input type="text" class="form-control EspacioSup" aria-label="Text input with dropdown button" placeholder="Escriba un texto para buscar">
+              <input v-on:keyup="Editando" v-model="searchval" type="text" class="form-control EspacioSup" aria-label="Text input with dropdown button" placeholder="Escriba un texto para buscar">
 
               <!-- TABLA -->
               <table class="table table-primary table-hover table-bordered border-info table-striped">
@@ -75,164 +71,12 @@
                 </thead>
                 <tbody>
                   <!-- FILA 1 -->
-                  <tr v-on:click="Maestro1">
-                    <th scope="row">00001</th>
-                    <td>Carlos Armando López Laguna</td>
-                    <td>8713919228</td>
-                    <td>carloscorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 2 -->
-                  <tr>
-                    <th scope="row">00002</th>
-                    <td>Valeria Alejandra Díaz Guerrero</td>
-                    <td>8711249865</td>
-                    <td>valeriacorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 3 -->
-                  <tr>
-                    <th scope="row">00003</th>
-                    <td>Brenda Azucena Medina Álvarez</td>
-                    <td>8713919217</td>
-                    <td>brendacorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 4 -->
-                  <tr>
-                    <th scope="row">00004</th>
-                    <td>Jorge Alejandro Montoya Salas</td>
-                    <td>8713911648</td>
-                    <td>jorgecorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 5 -->
-                  <tr>
-                    <th scope="row">00005</th>
-                    <td>Francisco Jared Marentez Delgado</td>
-                    <td>8713911648</td>
-                    <td>jaredcorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 1 -->
-                  <tr>
-                    <th scope="row">00001</th>
-                    <td>Carlos Armando López Laguna</td>
-                    <td>8713919228</td>
-                    <td>carloscorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 2 -->
-                  <tr>
-                    <th scope="row">00002</th>
-                    <td>Valeria Alejandra Díaz Guerrero</td>
-                    <td>8711249865</td>
-                    <td>valeriacorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 3 -->
-                  <tr>
-                    <th scope="row">00003</th>
-                    <td>Brenda Azucena Medina Álvarez</td>
-                    <td>8713919217</td>
-                    <td>brendacorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 4 -->
-                  <tr>
-                    <th scope="row">00004</th>
-                    <td>Jorge Alejandro Montoya Salas</td>
-                    <td>8713911648</td>
-                    <td>jorgecorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 5 -->
-                  <tr>
-                    <th scope="row">00005</th>
-                    <td>Francisco Jared Marentez Delgado</td>
-                    <td>8713911648</td>
-                    <td>jaredcorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 1 -->
-                  <tr>
-                    <th scope="row">00001</th>
-                    <td>Carlos Armando López Laguna</td>
-                    <td>8713919228</td>
-                    <td>carloscorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 2 -->
-                  <tr>
-                    <th scope="row">00002</th>
-                    <td>Valeria Alejandra Díaz Guerrero</td>
-                    <td>8711249865</td>
-                    <td>valeriacorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 3 -->
-                  <tr>
-                    <th scope="row">00003</th>
-                    <td>Brenda Azucena Medina Álvarez</td>
-                    <td>8713919217</td>
-                    <td>brendacorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 4 -->
-                  <tr>
-                    <th scope="row">00004</th>
-                    <td>Jorge Alejandro Montoya Salas</td>
-                    <td>8713911648</td>
-                    <td>jorgecorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 5 -->
-                  <tr>
-                    <th scope="row">00005</th>
-                    <td>Francisco Jared Marentez Delgado</td>
-                    <td>8713911648</td>
-                    <td>jaredcorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 1 -->
-                  <tr>
-                    <th scope="row">00001</th>
-                    <td>Carlos Armando López Laguna</td>
-                    <td>8713919228</td>
-                    <td>carloscorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 2 -->
-                  <tr>
-                    <th scope="row">00002</th>
-                    <td>Valeria Alejandra Díaz Guerrero</td>
-                    <td>8711249865</td>
-                    <td>valeriacorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 3 -->
-                  <tr>
-                    <th scope="row">00003</th>
-                    <td>Brenda Azucena Medina Álvarez</td>
-                    <td>8713919217</td>
-                    <td>brendacorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 4 -->
-                  <tr>
-                    <th scope="row">00004</th>
-                    <td>Jorge Alejandro Montoya Salas</td>
-                    <td>8713911648</td>
-                    <td>jorgecorreo@gmail.com</td>
-                    <td>Permitido</td>
-                  </tr>
-                  <!-- FILA 5 -->
-                  <tr>
-                    <th scope="row">00005</th>
-                    <td>Francisco Jared Marentez Delgado</td>
-                    <td>8713911648</td>
-                    <td>jaredcorreo@gmail.com</td>
-                    <td>Permitido</td>
+                  <tr v-for="row in allData">
+                    <td> {{ row.ID_PERSONA }} </th>
+                    <td> {{ row.NOMBRE }} </td>
+                    <td> {{ row.TELEFONO }} </td>
+                    <td> {{ row.CORREO }} </td>
+                    <td> {{ row.PERMISO }} </td>
                   </tr>
                 </tbody>
             </table>
@@ -265,6 +109,13 @@
         </div>        
     </div>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- VUE JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- AXIOS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <!-- CÓDIGO JS/VUE-->
     <script>
         //MENSAJE
@@ -275,8 +126,36 @@
                 c_footer: 0,
                 tipo_usuario:"admin",
                 Titulo_Principal: "Buscar profesor",
+                allData: '',
+                searchval: '',
+                vista: 'info_prof'
             },
             methods: {
+              CargarTabla: function (event) {
+                   axios({
+                       method: 'POST',
+                       url: '../src/ad_buscar_admins.php',
+                       action: 'fetchall',
+                       data: {
+                           vista: this.vista
+                      }
+                   }) .then((response) => {
+                    this.allData = response.data;
+                   })
+               },
+               Editando: function (event) {
+                axios({
+                       method: 'POST',
+                       url: '../src/ad_buscar_admins_filtro.php',
+                       action: 'fetchall',
+                      data: {
+                           searchval: this.searchval,
+                           vista: this.vista
+                      }
+                   }) .then((response) => {
+                    this.allData = response.data;
+                   })
+                },
               CerrarSesion: function (event) {
                     window.location.href = "../index.html"
                 },
@@ -299,6 +178,9 @@
                 {
                   window.location.href = "ad_cambios_maestro.html" 
                 },
+            },
+            created: function(){
+              this.CargarTabla();
             },
             computed: {
 

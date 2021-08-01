@@ -10,16 +10,13 @@
                Respuesta: "",
                ResultadoConsulta:[
                    {Con_usuario:""}
-               ],
-               //URLpost:"https://localhost/Pagina_Equipo/PaginaWeb/src/accountlogin.php" //Jared
-               URLpost:"http://scdam.web/src/accountlogin.php" //Carlos
-               
+               ]               
            },
            methods:{        
                LoginTry: function (event) {
                    axios({
                        method: 'POST',
-                       url: this.URLpost,
+                       url: '/src/accountlogin.php',
                        data: {
                            correocon: this.correocon,
                            contracon: this.contracon
@@ -33,13 +30,13 @@
                Redireccion: function (event) {
                    switch (this.Respuesta) {
                        case 'Admin':
-                       window.location.href = 'http://scdam.web/admins/ad_avisos.html'
+                       window.location.href = '/admins/ad_avisos.html'
                            break;
                        case 'Maestro':
-                       window.location.href = 'http://scdam.web/profe/ma_avisos.html'
+                       window.location.href = '/profe/ma_avisos.html'
                            break;
                        case 'Alumno':
-                       window.location.href = 'http://scdam.web/alumno/al_avisos.html'
+                       window.location.href = '/alumno/al_avisos.html'
                            break;
                        case 'No registrado':
                            //alert("Correo o contraseña incorrecto");

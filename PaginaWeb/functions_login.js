@@ -10,7 +10,8 @@
                Respuesta: "",
                ResultadoConsulta:[
                    {Con_usuario:""}
-               ]               
+               ],
+               Globales:[]               
            },
            methods:{        
                LoginTry: function (event) {
@@ -28,6 +29,7 @@
                    })
                },
                Redireccion: function (event) {
+                   localStorage.setItem("gcorreo", JSON.stringify(this.Globales));
                    switch (this.Respuesta) {
                        case 'Admin':
                        window.location.href = '/admins/ad_avisos.html'
@@ -39,15 +41,13 @@
                        window.location.href = '/alumno/al_avisos.html'
                            break;
                        case 'No registrado':
-                           //alert("Correo o contraseña incorrecto");
-                           this.globalvue = globalvue;
-                           alert(globalvue.globalVariable.G_Nombre);
+                           alert("Correo o contraseña incorrecto");
                            break;
                        default:
                            alert("Error al enviar información");
                        break;
                    }
-               }
+               },
            },
            computed: {
               

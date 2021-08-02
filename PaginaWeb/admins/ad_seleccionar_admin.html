@@ -73,11 +73,11 @@
                 <tbody>
                   <!-- FILA 1 -->
                   <tr v-for="row in allData">
-                    <td> {{ row.ID_PERSONA }} </th>
-                    <td> {{ row.NOMBRE }} </td>
-                    <td> {{ row.TELEFONO }} </td>
-                    <td> {{ row.CORREO }} </td>
-                    <td> {{ row.PERMISO }} </td>
+                    <td v-on:click="EditarPersona(row.ID_PERSONA)"> {{ row.ID_PERSONA }} </th>
+                    <td v-on:click="EditarPersona(row.ID_PERSONA)"> {{ row.NOMBRE }} </td>
+                    <td v-on:click="EditarPersona(row.ID_PERSONA)"> {{ row.TELEFONO }} </td>
+                    <td v-on:click="EditarPersona(row.ID_PERSONA)"> {{ row.CORREO }} </td>
+                    <td v-on:click="EditarPersona(row.ID_PERSONA)"> {{ row.PERMISO }} </td>
                   </tr>
                 </tbody>
             </table>
@@ -157,6 +157,11 @@
                    }) .then((response) => {
                     this.allData = response.data;
                    })
+                },
+                EditarPersona:function(event)
+                {
+                  alert("Persona: " + event);
+                  //window.location.href = "ad_cambios_admin.html" 
                 },
               CerrarSesion: function (event) {
                     window.location.href = "../index.html"
